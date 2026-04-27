@@ -58,8 +58,7 @@ print(stock_prices.columns.tolist())
 # =========================================
 # 4. RETURNS CALCULATION
 # =========================================
-# Convert prices into percentage returns:
-# r_t = (P_t - P_{t-1}) / P_{t-1}
+# Convert prices into percentage returns
 # This standardises performance across different stock price levels
 
 returns = stock_prices.pct_change().dropna()
