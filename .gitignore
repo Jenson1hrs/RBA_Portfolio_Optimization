@@ -14,8 +14,7 @@ __pycache__/
 *.pyc
 
 # Output folders (if you don't want to track them)
-output/
-raw_data/
+none for now
 
 # OS junk
 .DS_Store
