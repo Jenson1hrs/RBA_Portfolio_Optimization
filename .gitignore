@@ -1,20 +1,23 @@
-# Jupyter notebooks
+# Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints*
-.ipynb_checkpoints/*
-!*.ipynb
 
-# Virtual environments
-anaconda_projects/
+# VS Code
+.vscode/
 .virtual_documents/
+
+# Anaconda
+anaconda_projects/
+
+# Python
 __pycache__/
 *.pyc
 
-# Data files (if large - discuss with team)
-# data/  (uncomment if you DON'T want to share data)
-# *.csv
-# *.xlsx
+# Output folders (if you don't want to track them)
+output/
+raw_data/
 
-# VS Code (if using)
-.vscode/
-*.code-workspace
+# OS junk
+.DS_Store
+Thumbs.db
+*.crdownload
