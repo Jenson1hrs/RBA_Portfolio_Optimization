@@ -83,22 +83,20 @@ stats_full = pd.DataFrame({
 # Remove zero volatility (avoid division errors)
 stats_full = stats_full[stats_full["Volatility"] > 0]
 
+# Ignore Return/Risk Ratio, backup fallback plan only
 # Return/Risk Ratio measures efficiency (return per unit of risk)
 stats_full["Return/Risk Ratio"] = stats_full["Mean Return"] / stats_full["Volatility"]
 
 # =========================================
 # 6. LOW VOLATILITY STOCKS (STAGE 1)
 # =========================================
-# Income objective → select only stocks with positive returns
+# Income objective = select only stocks with positive returns
 # Negative-return stocks are excluded as they contradict income generation goals
 
 stats_positive = stats_full[stats_full["Mean Return"] > 0].copy()
 
 print(f"\nStocks with positive returns: {len(stats_positive)}")
 print(f"Stocks excluded (negative returns): {len(stats_full) - len(stats_positive)}")
-
-# Select top 10 stocks with highest return-to-risk ratio
-# This proxies stable and efficient income-generating stocks
 
 # Step 1: Try assignment condition
 low_vol_condition = stats_positive[
