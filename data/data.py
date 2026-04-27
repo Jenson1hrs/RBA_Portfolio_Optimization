@@ -127,19 +127,18 @@ high_vol_candidates = stats_full[
 
 print(f"\nStocks meeting high-vol condition: {len(high_vol_candidates)}")
 
-# Select top 5 highest volatility stocks
-high_vol = high_vol_candidates.sort_values(
-    by="Volatility", ascending=False
-).head(5)
-
-# Fallback if insufficient stocks meet condition
-if len(high_vol) < 5:
+# Proper conditional logic BEFORE slicing
+if len(high_vol_candidates) >= 5:
+    high_vol = high_vol_candidates.sort_values(
+        by="Volatility", ascending=False
+    ).head(5)
+else:
     print("⚠️ Not enough stocks met high-vol condition. Using highest volatility stocks instead.")
     high_vol = stats_full.sort_values(
         by="Volatility", ascending=False
     ).head(5)
 
-# Flag whether each stock strictly meets condition
+# Flag whether each stock meets condition
 high_vol["Meets_Condition"] = high_vol["Volatility"] > 3 * high_vol["Mean Return"]
 
 # =========================================

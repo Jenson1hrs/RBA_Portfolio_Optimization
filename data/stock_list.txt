@@ -17,7 +17,7 @@ I follow data and calculation.
 HIGH VOLATILITY (5 stocks) (include negative returns)
 Ticker	Company Name
 5168.KL: Hartalega (negative returns for past 2 years)
-5216.KL: Dagang NeXchange Berhad
+5216.KL: Dagang NeXchange Berhad (negative returns for past 2 years)
 7113.KL: Top Glove
 5183.KL: Petronas Chemicals
 7106.KL: Supermax (negative returns for past 2 years)
