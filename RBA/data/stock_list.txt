@@ -1,0 +1,75 @@
+Will use these stocks for assignment stage 1 and 2:
+LOW VOLATILITY (10 stocks) (only positive returns)
+1155.KL	Maybank
+1066.KL	RHB Bank
+5819.KL	Hong Leong Bank
+5225.KL	IHH Healthcare
+1082.KL	Hong Leong Financial 
+6033.KL	Petronas Gas
+1961.KL	IOI Corp
+1818.KL	Bursa Malaysia
+1295.KL	Public Bank
+5347.KL	Tenaga
+
+**Hong Leong Financial and Hong Leong Bank is not same. under same company but diff stock.
+I follow data and calculation. 
+
+HIGH VOLATILITY (5 stocks) (include negative returns)
+Ticker	Company Name
+5168.KL: Hartalega (negative returns for past 2 years)
+5216.KL: Dagang NeXchange Berhad
+7113.KL: Top Glove
+5183.KL: Petronas Chemicals
+7106.KL: Supermax (negative returns for past 2 years)
+
+=========================================================
+Stock Pool Name List
+
+Large-cap (Stable / Low Vol candidates)
+1155.KL – Maybank
+1295.KL – Public Bank
+1023.KL – CIMB
+5347.KL – Tenaga
+5225.KL – IHH Healthcare
+5819.KL – Hong Leong Bank
+1961.KL – IOI Corp
+2445.KL – KLK
+3816.KL – MISC
+6012.KL – Maxis
+4863.KL – Telekom Malaysia
+6888.KL – Axiata
+1082.KL – Hong Leong Financial
+5183.KL – Petronas Chemicals
+6033.KL – Petronas Gas
+5285.KL - MR DIY
+5681.KL - Press Metal 
+5211.KL - Sunway
+0166.KL - ITROX Corporation
+
+Mid-cap (Mixed behaviour)
+1818.KL – Bursa Malaysia
+4707.KL – Nestle Malaysia
+4197.KL – Sime Darby
+3182.KL – Genting
+4715.KL – Genting Malaysia
+1066.KL – RHB Bank
+2488.KL – Alliance Bank
+4677.KL – YTL Corp
+6742.KL – YTL Power
+1562.KL – SP Setia
+1619.KL - DRB-HICOM
+
+Small-cap / Higher volatility candidates
+5296.KL – MR DIY
+7113.KL – Top Glove
+7106.KL – Supermax
+5168.KL – Hartalega
+6947.KL – CelcomDigi
+0138.KL – Zetrix
+5216.KL – NexG
+7277.KL – Dialog
+7084.KL – QL Resources
+7203.KL – DNeX
+
+
+
