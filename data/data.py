@@ -162,30 +162,36 @@ if len(negative_high_vol) > 0:
     print(negative_high_vol.index.tolist())
 
 # =========================================
-# 9. SAVE DATA (REPRODUCIBILITY)
+# 9. SAVE DATA (REPRODUCIBILITY) (RUN ONCE ONLY)
 # =========================================
 # This stores processed datasets for analysis and next stages
 
-os.makedirs("output", exist_ok=True)
-
-# Save candidate pool (IMPORTANT for assignment requirement)
-pd.Series(stocks, name="Candidate Pool").to_csv("output/candidate_pool.csv")
-print(f"Candidate pool size: {len(stocks)} stocks")
-
-# Save processed datasets
-stock_prices.to_csv("output/cleaned_prices.csv")
-returns.to_csv("output/returns.csv")
-stats_full.to_csv("output/stock_statistics.csv")
-
-# Save selected stocks
-low_vol.to_csv("output/low_vol_stocks.csv")
-high_vol.to_csv("output/high_vol_stocks.csv")
-
-# Combine selected stocks for next stage (portfolio optimisation)
-selected_stocks = list(low_vol.index) + list(high_vol.index)
-pd.Series(selected_stocks, name="Selected Stocks").to_csv("output/selected_stocks.csv")
-
-print("\n✅ Core outputs saved")
+# Check if output already exists
+if not os.path.exists("output/selected_stocks.csv"):
+    print("📁 Saving outputs (first run)...")
+    
+    os.makedirs("output", exist_ok=True)
+    
+    # Save candidate pool
+    pd.Series(stocks, name="Candidate Pool").to_csv("output/candidate_pool.csv")
+    print(f"Candidate pool size: {len(stocks)} stocks")
+    
+    # Save processed datasets
+    stock_prices.to_csv("output/cleaned_prices.csv")
+    returns.to_csv("output/returns.csv")
+    stats_full.to_csv("output/stock_statistics.csv")
+    
+    # Save selected stocks
+    low_vol.to_csv("output/low_vol_stocks.csv")
+    high_vol.to_csv("output/high_vol_stocks.csv")
+    
+    # Combine selected stocks
+    selected_stocks = list(low_vol.index) + list(high_vol.index)
+    pd.Series(selected_stocks, name="Selected Stocks").to_csv("output/selected_stocks.csv")
+    
+    print("\n✅ Core outputs saved")
+else:
+    print("ℹ️ Output files already exist. Skipping save. Delete 'output' folder to re-save.")
 
 
 # =========================================
