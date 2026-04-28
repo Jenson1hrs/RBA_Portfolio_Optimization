@@ -92,6 +92,9 @@ stats_full["Return/Risk Ratio"] = stats_full["Mean Return"] / stats_full["Volati
 # =========================================
 # Income objective = select only stocks with positive returns
 # Negative-return stocks are excluded as they contradict income generation goals
+# Choosing Low volatility logic:
+# First, follow assignment formula: (daily r̄p > daily σp) 
+# If returned empty or not enough stocks then fallback by taking lowest volatility stocks that are having positive returns
 
 stats_positive = stats_full[stats_full["Mean Return"] > 0].copy()
 
@@ -118,6 +121,9 @@ else:
 # Use FULL universe (including negative returns)
 # Mandate defines high volatility as:
 # volatility > 3 × mean return
+#- Choosing High voloatility logic:
+# Following assignment formula: (daily σp > 3.0  of daily r̄p ) 
+# If returned empty or not enough stocks then fallback by taking the highest volatility
 
 high_vol_candidates = stats_full[
     stats_full["Volatility"] > 3 * stats_full["Mean Return"]
