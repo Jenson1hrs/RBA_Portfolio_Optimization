@@ -220,3 +220,74 @@ if SAVE_DATA:
 
 else:
     print("ℹ️ Raw data export skipped")
+
+
+
+#######################################################
+
+# =========================================
+# 11. Filtering out the returns to align with the selected stocks
+# =========================================
+
+sls = pd.read_csv("output/selected_stocks.csv")
+selected = sls["Selected Stocks"].dropna().astype(str).tolist()
+
+# 2) Load returns (first column is the date index)
+not_filtered_returns = pd.read_csv("output/returns.csv", index_col=0)
+
+# 3) Filter to selected columns that exist
+selected_existing = [t for t in selected if t in not_filtered_returns.columns]
+missing = sorted(set(selected) - set(selected_existing))
+if missing:
+    print(f"Missing from returns.csv ({len(missing)}): {missing}")
+
+returns_selected = returns.loc[:, selected_existing]
+
+# =========================================
+returns_selected.to_csv("output/returns_selected.csv")
+returns_selected.head()
+#
+#12. Calculating the correlation of stocks
+filtered_returns = pd.read_csv("output/returns_selected.csv")
+
+df = filtered_returns.drop(columns=["Date"])
+
+
+correlation_matrix = df.corr()
+print("Correlation Matrix Across Stocks:")
+print(correlation_matrix.round(3))
+
+# =========================================
+# 13. Beta calculation
+# =========================================
+
+# 13.1 Merge FMBKLCI return with stock returns
+benchmark_returns.to_csv("output/KLCIreturn.csv")## save bechmark return get from previous codes
+##read both files with returns
+klci= pd.read_csv("output/KLCIreturn.csv")
+filtered_returns=pd.read_csv("output/returns_selected.csv")
+##merge both files with prices inner join with dates
+merged = pd.merge(filtered_returns,klci, on="Date", how="inner")
+
+## save files for further calculations
+merged.to_csv("output/returnsmergedFMBKLCI.csv")
+
+# 13.2 Beta calculation
+returns_merged = pd.read_csv("output/returnsmergedFMBKLCI.csv").drop(columns=["Date","Num"])
+cov_matrix = returns_merged.cov()
+
+cov_matrix.to_csv("output/Covariance_Matrix.csv")
+
+# Market variance
+market_var = cov_matrix.loc['^KLSE', '^KLSE']
+
+# Beta = Cov(stock, market) / Var(market)
+beta = cov_matrix['^KLSE'] / market_var
+
+# Remove market itself
+beta = beta.drop('^KLSE')
+beta.to_csv("output/beta.csv")
+
+# Display
+print("Beta for each stocks againts FMBKLCI:")
+print(beta.round(3))
