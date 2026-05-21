@@ -1,0 +1,4 @@
+Stage,Selection Logic,Number of Stocks,Selected Stocks
+Stage 1 Low-Volatility Universe,Stabiliser: positive-return stocks with lowest volatility,10,"1155.KL, 1066.KL, 5819.KL, 6033.KL, 5225.KL, 1082.KL, 1818.KL, 1295.KL, 5347.KL, 3816.KL"
+Stage 2 High-Volatility Additions,Assignment high-volatility rule with positive-return stabiliser,5,"5297.KL, 5292.KL, 4677.KL, 6742.KL, 5288.KL"
+Stage 2 Full Universe,Stage 1 stocks plus Stage 2 high-volatility additions,15,"1155.KL, 1066.KL, 5819.KL, 6033.KL, 5225.KL, 1082.KL, 1818.KL, 1295.KL, 5347.KL, 3816.KL, 5297.KL, 5292.KL, 4677.KL, 6742.KL, 5288.KL"

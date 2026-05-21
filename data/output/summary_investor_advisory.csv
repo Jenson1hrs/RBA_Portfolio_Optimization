@@ -1,0 +1,7 @@
+Advisory Factor,Interpretation
+Risk Tolerance,The investor should be comfortable with a controlled income-risk level rather than aggressive return chasing.
+Risk Capacity,"The model limits annual portfolio risk to 10%, so both stages are tested under the same risk budget."
+Risk Required,Stage 2 requires accepting higher market sensitivity because it has a higher beta than Stage 1.
+Stage 1 Suitability,"Stage 1 is more defensive, with beta 0.7540 and Sharpe ratio 1.4242."
+Stage 2 Suitability,"Stage 2 improves return to 19.21% and Sharpe ratio to 1.5873, but beta increases to 0.8307."
+Final Recommendation,Stage 2 is preferred for investors who can accept slightly higher market sensitivity for better risk-adjusted return.

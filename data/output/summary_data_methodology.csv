@@ -1,0 +1,17 @@
+Item,Value
+Stock Market,Bursa Malaysia
+Benchmark,FBMKLCI
+Analysis Period,2023-05-23 to 2026-05-19
+Return Method,Daily log returns
+Candidate Pool After Cleaning,77
+Stage 1 Stocks,10
+Stage 2 Additions,5
+Stage 2 Full Universe,15
+Risk-Free Proxy,Average 3-Year Malaysia Government Bond Yield
+Average Annual Risk-Free Rate,3.3333%
+Optimisation Model,Constrained Mean-Variance Optimisation
+Covariance Estimation,LedoitWolf shrinkage covariance
+Portfolio Objective,Income objective
+Asset Cap,25%
+Volatility Cap,10%
+Dividend Yield,Not included

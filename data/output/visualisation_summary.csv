@@ -1,0 +1,6 @@
+Chart,File,Purpose
+Portfolio Metric Comparison,portfolio_metric_comparison.png,Compare final Stage 1 and Stage 2 portfolio performance.
+Optimised Weight Distribution,weight_distribution_comparison.png,Show how asset weights differ between Stage 1 and Stage 2.
+MVO versus Benchmark Comparison,mvo_vs_benchmark_comparison.png,Validate MVO against simple benchmark allocation methods.
+Weight Cap Sensitivity,weight_cap_sensitivity_sharpe.png,Test whether results are sensitive to asset cap changes.
+Stage 2 Correlation Heatmap,stage2_correlation_heatmap.png,Support diversification and covariance interpretation.
