@@ -1,4 +1,0 @@
-Stage,Selection Logic,Number of Stocks
-Stage 1 Low-Volatility Universe,Stabiliser: positive-return stocks with lowest volatility,10
-Stage 2 High-Volatility Additions,Assignment high-volatility rule with positive-return stabiliser,5
-Stage 2 Full Universe,Stage 1 stocks plus Stage 2 additions,15
